@@ -22,8 +22,9 @@ const options = {
     // console.log(difTime);
     if (difTime <= 0) {
       Notiflix.Notify.failure('Please choose a date in the future');
-    };
+    } else {
     startTimerBtn.disabled = false;
+    };
   },
 };
 
