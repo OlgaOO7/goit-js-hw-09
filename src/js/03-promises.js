@@ -17,13 +17,13 @@ function onSubmit(evt) {
   let amount = Number(refs.amount.value);
   // console.log(delay, step, amount);
   for (let i = 1; i <= amount; i += 1) {
-    const delayStep = delay + step * i;
-    createPromise(i, delayStep).then(({ position, delay }) => {
+    createPromise(i, delay).then(({ position, delay }) => {
       Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
     })
     .catch(({ position, delay }) => {
       Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
     });
+    delay += step;
   }
 };
 
